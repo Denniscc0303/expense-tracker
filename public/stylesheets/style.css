@@ -45,6 +45,7 @@ header {
   margin-left: 30px;
   color: #84C1FF;
   margin-right: 20px;
+  width: 50px;
 }
 
 .list-item {
@@ -71,6 +72,11 @@ header {
   left: 300px;
   margin: 50px 0;
   color: white;
+}
+
+.new-button {
+  position: relative;
+  left: 300px;
 }
 
 
