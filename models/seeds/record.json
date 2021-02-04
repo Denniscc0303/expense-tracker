@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "name": "早餐",
+      "category": "food",
+      "categoryIcon": "fas fa-utensils",
+      "date": "2021/02/01",
+      "amount": "80"
+    },
+    {
+      "name": "捷運",
+      "category": "transportation",
+      "categoryIcon": "fas fa-shuttle-van",
+      "date": "2021/02/02",
+      "amount": "60"
+    },
+    {
+      "name": "電影",
+      "category": "entertainment",
+      "categoryIcon": "fas fa-grin-beam",
+      "date": "2021/02/03",
+      "amount": "300"
+    },
+    {
+      "name": "洗髮精",
+      "category": "familyexpense",
+      "categoryIcon": "fas fa-home",
+      "date": "2021/02/04",
+      "amount": "239"
+    },
+    {
+      "name": "樂透",
+      "category": "other",
+      "categoryIcon": "fas fa-pen",
+      "date": "2021/02/05",
+      "amount": "50"
+    }
+  ]
+}
