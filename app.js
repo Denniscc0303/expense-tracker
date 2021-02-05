@@ -1,11 +1,11 @@
 //載入所需套件及模組
 const express = require('express')
-const app = express()
-const port = 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-
 const methodOverride = require('method-override')
+
+const app = express()
+const port = 3000
 
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(methodOverride('_method'))

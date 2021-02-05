@@ -1,49 +1,53 @@
 <div class="container" style="width:fit-content;">
   <form action="/records" method="POST">
+    {{!-- title --}}
     <div class="d-flex m-4 " style="">
       <P>*必填欄位</P>
       <h3 style="margin-left: 150px;">請輸入你的支出</h3>
     </div>
-    <div>
-      <div class="row g-3 align-items-center m-5" style="width: 40vw;">
-        <div class="col-auto">
-          <label for="inputPassword6" class="col-form-label">名稱*:</label>
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control" style="width: 30vw;" name="name" required>
-        </div>
+    {{!-- name --}}
+    <div class="row g-3 align-items-center m-5" style="width: 40vw;">
+      <div class="col-auto">
+        <label class="col-form-label">名稱*:</label>
       </div>
-      <div class="row g-3 align-items-center m-5">
-        <div class="col-auto">
-          <label for="inputPassword6" class="col-form-label">日期*:</label>
-        </div>
-        <div class="col-auto">
-          <input type="date" class="form-control" style="width: 30vw;" name="date" required>
-        </div>
+      <div class="col-auto">
+        <input type="text" class="form-control" style="width: 30vw;" name="name" required>
       </div>
-      <div class="row g-3 align-items-center m-5">
-        <div class="col-auto">
-          <label class="col-form-label">類別*:</label>
-        </div>
-        <select class="ml-3" style="width: 30vw; height: 40px;" name="Category" required>
-          <option selected>Select</option>
-          <option value="familyexpense/fas fa-home">家居物業</option>
-          <option value="transportation/fas fa-shuttle-van">交通出行</option>
-          <option value="entertainment/fas fa-grin-beam">休閒娛樂</option>
-          <option value="food/fas fa-utensils">餐飲食品</option>
-          <option value="other/fas fa-pen">其他</option>
-        </select>
+    </div>
+    {{!-- date --}}
+    <div class="row g-3 align-items-center m-5">
+      <div class="col-auto">
+        <label class="col-form-label">日期*:</label>
       </div>
-      <div class="row g-3 align-items-center m-5">
-        <div class="col-auto">
-          <label for="inputPassword6" class="col-form-label">金額*:</label>
-        </div>
-        <div class="col-auto">
-          <input type="text" class="form-control" style="width: 30vw;" name="amount" required>
-        </div>
+      <div class="col-auto">
+        <input type="date" class="form-control" style="width: 30vw;" name="date" required>
       </div>
-      <div class="new-button">
-        <button type="submit" class="btn btn-dark mb-5">確認新增</button>
+    </div>
+    {{!-- category --}}
+    <div class="row g-3 align-items-center m-5">
+      <div class="col-auto">
+        <label class="col-form-label">類別*:</label>
       </div>
+      <select class="ml-3" style="width: 30vw; height: 40px;" name="Category" required>
+        <option value="familyexpense/fas fa-home">家居物業</option>
+        <option value="transportation/fas fa-shuttle-van">交通出行</option>
+        <option value="entertainment/fas fa-grin-beam">休閒娛樂</option>
+        <option value="food/fas fa-utensils">餐飲食品</option>
+        <option value="other/fas fa-pen">其他</option>
+      </select>
+    </div>
+    {{!-- amount --}}
+    <div class="row g-3 align-items-center m-5">
+      <div class="col-auto">
+        <label class="col-form-label">金額*:</label>
+      </div>
+      <div class="col-auto">
+        <input type="number" class="form-control" style="width: 30vw;" name="amount" required>
+      </div>
+    </div>
+    {{!-- submit --}}
+    <div class="new-button">
+      <button type="submit" class="btn btn-dark mb-5">確認新增</button>
+    </div>
   </form>
 </div>

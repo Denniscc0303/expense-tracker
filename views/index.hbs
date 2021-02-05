@@ -1,21 +1,24 @@
-<div class="container">
-  <div class="dropdown">
-    <button class="sortButton btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-      data-toggle="dropdown" aria-expanded="false">
-      類別
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <li><a class="dropdown-item" href="#">日期</a></li>
-      <li><a class="dropdown-item" href="#">分類</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
+<div class="index container">
+  <!--  category filter  -->
+  <div class="sortButton d-flex justify-content-center align-items-baseline">
+    <form action="/records/filter" method="GET">
+      <select class="filter-form" name="filter">
+        <option value="all">總花費</option>
+        <option value="familyexpense" {{#if (eq filter 'familyexpense' )}} selected {{/if}}>家居物業</option>
+        <option value="transportation" {{#if (eq filter 'transportation' )}} selected {{/if}}>交通出行</option>
+        <option value="entertainment" {{#if (eq filter 'entertainment' )}} selected {{/if}}>休閒娛樂</option>
+        <option value="food" {{#if (eq filter 'food' )}} selected {{/if}}>餐飲食品</option>
+        <option value="other" {{#if (eq filter 'other' )}} selected {{/if}}>其他</option>
+      </select>
+      <button type="submit" class="btn btn-primary m-1">查詢</button>
+    </form>
   </div>
-
+  <!--  total amount -->
   <div class="totalAmount d-flex justify-content-start">
     <h5>總金額:</h5>
     <p class="totalNum">{{totalAmount}}</p>
   </div>
-
+  <!--  record  -->
   <ul class="list-group">
     {{#each records}}
     <li class="list-group-item">
@@ -30,10 +33,10 @@
           <div class="list-money">{{this.amount}}</div>
         </div>
         <div class="list-botton d-flex justify-content-around">
-          <a href="./records/{{ this._id}}/edit">
+          <a href="/records/{{ this._id}}/edit">
             <button type="button" class="btn btn-secondary m-1">編輯</button>
           </a>
-          <form action="./records/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+          <form action="/records/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
             <button type="submit" class="btn btn-secondary m-1">刪除</button>
           </form>
         </div>
@@ -41,7 +44,7 @@
     </li>
     {{/each}}
   </ul>
-
-  <a class="add-new-expense btn btn-warning" href="./records/new">
+  <!--  new  -->
+  <a class="add-new-expense btn btn-warning" href="/records/new">
     新增支出
   </a>
