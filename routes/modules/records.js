@@ -29,7 +29,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 //設定new post路由
-router.post('/:id/edit', (req, res) => {
+router.put('/:id/', (req, res) => {
   const id = req.params.id
   const { name, Category, date, amount } = req.body
   let [category, categoryIcon] = Category.split('/')
@@ -43,6 +43,14 @@ router.post('/:id/edit', (req, res) => {
     .then(() => res.redirect('/')) // 新增完成後導回首頁
     .catch(error => console.log(error))
 
+})
+
+router.delete('/:id', (req, res) => {
+  const id = req.params.id
+  return Record.findById(id)
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 module.exports = router

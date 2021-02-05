@@ -5,6 +5,11 @@ const port = 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
+const methodOverride = require('method-override')
+
+// 設定每一筆請求都會透過 methodOverride 進行前置處理
+app.use(methodOverride('_method'))
+
 // 引用路由器
 const routes = require('./routes')
 require('./config/mongoose')
