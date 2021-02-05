@@ -3,9 +3,9 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const PORT = process.env.PORT || 3000
 
 const app = express()
-const port = 3000
 
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(methodOverride('_method'))
@@ -28,7 +28,7 @@ app.use(express.static('public'))
 app.use(routes)
 
 //監聽app
-app.listen(port, () => {
-  console.log(`Express is listening on localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`Express is listening on localhost:${PORT}`)
 })
 
