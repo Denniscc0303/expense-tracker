@@ -19,5 +19,31 @@ router.post('/', (req, res) => {
 
 })
 
+//設定new路由
+router.get('/:id/edit', (req, res) => {
+  const id = req.params.id
+  Record.findById(id)
+    .lean()
+    .then((record) => res.render('edit', { record }))
+    .catch(error => console.error(error))
+})
+
+//設定new post路由
+router.post('/:id/edit', (req, res) => {
+  const id = req.params.id
+  const { name, Category, date, amount } = req.body
+  let [category, categoryIcon] = Category.split('/')
+  const newCategory = { 'category': category, 'categoryIcon': categoryIcon }
+  const newReqBody = Object.assign(req.body, newCategory)
+  Record.findById(id)
+    .then(record => {
+      record = Object.assign(record, newReqBody)
+      return record.save()
+    })
+    .then(() => res.redirect('/')) // 新增完成後導回首頁
+    .catch(error => console.log(error))
+
+})
+
 module.exports = router
 

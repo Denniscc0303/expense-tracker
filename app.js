@@ -13,7 +13,7 @@ require('./config/mongoose')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 //設定handlebars引擎
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs', helpers: { eq: (a, b) => a === b } }))
 app.set('view engine', 'hbs')
 
 //使用public靜態資料
